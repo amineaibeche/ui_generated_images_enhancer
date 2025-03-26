@@ -2,7 +2,7 @@
 
 Projet de traitement d'images utilisant l'IA pour améliorer et évaluer la qualité perceptive des images.
 
-![Interface](./screenshot.png) *(Ajoutez une capture d'écran réelle)*
+![Interface](./enhancement_ui.png) *(Ajoutez une capture d'écran réelle)*
 
 ## Fonctionnalités
 - **Amélioration d'images** : Utilise Stable Diffusion avec des paramètres personnalisables (prompt, étapes, force, etc.).
