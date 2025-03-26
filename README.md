@@ -1,42 +1,48 @@
-# Generated Images Enhancer & Evaluator
+# Perceptual Image Enhancer
 
-Projet de traitement d'images utilisant l'IA pour améliorer et évaluer la qualité perceptive des images.
+This project evaluates and enhances generated images using advanced AI techniques, such as fine-tuning text models for prompt enhancement and detecting error regions with Vision Transformers (ViT).
 
-![Interface](./enhancement_ui.png) *(Ajoutez une capture d'écran réelle)*
+![Enhancement Interface](./enhancement_ui.png) *(Add a real screenshot)*
 
-## Fonctionnalités
-- **Amélioration d'images** : Utilise Stable Diffusion avec des paramètres personnalisables (prompt, étapes, force, etc.).
-- **Évaluation de qualité** : 
-  - Score MOS (ResNet-18/50)
-  - Score d'alignement (AlignNet avec T5/BERT)
-- **Interface dynamique** :
-  - Thème clair/sombre
-  - Animation de chargement avec dégradé
-  - Boutons de téléchargement (1K, 2K, 4K)
-- **Modèles personnalisables** : Choix du modèle perceptuel, d'alignement et d'amélioration
+## Features
+- **Image Enhancement**:
+  - Utilizes Stable Diffusion with customizable parameters (`prompt`, `steps`, `strength`, etc.).
+  - Includes inpainting modes to fill detected error regions.
+- **Quality Evaluation**:
+  - MOS (Mean Opinion Score) using ResNet-18/50.
+  - Alignment score using AlignNet with T5/BERT models.
+    ![Evaluation Interface](./evaluation_ui.png)
+- **Dynamic Interface**:
+  - Light/Dark theme support.
+  - Smooth gradient loading animations.
+  - Download buttons for enhanced images (1K, 2K, 4K resolutions).
+- **Customizable Models**:
+  - Choice of perceptual, alignment, and enhancement models.
+    ![Model Selection](./choices_modal.png)
 
-## Stack technique
-- **Backend** : Django + Django REST Framework
-- **Frontend** : React + Tailwind CSS
-- **IA** :
+## Tech Stack
+- **Backend**: Django + Django REST Framework
+- **Frontend**: React + Tailwind CSS
+- **AI/ML**:
   - PyTorch
-  - Stable Diffusion
-  - ResNet
-  - Modèles T5/BERT pour l'alignement
+  - Stable Diffusion (image generation and inpainting)
+  - ResNet (quality assessment)
+  - T5/BERT models for alignment
+  - Vision Transformer (ViT)
 
 ## Installation
 
 ### Backend (Django)
 ```bash
-# Créer un environnement virtuel
+# Create a virtual environment
 python -m venv venv
-source venv/bin/activate  # Windows : venv\Scripts\activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# Installer les dépendances
+# Install dependencies
 pip install -r requirements.txt
 
-# Appliquer les migrations
+# Apply database migrations
 python manage.py migrate
 
-# Lancer le serveur
+# Start the development server
 python manage.py runserver
